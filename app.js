@@ -55,7 +55,19 @@ document.querySelector('form[role="search"]').addEventListener('submit', e => {
 
             parentEl.appendChild(entryCol);
         });
-    })
+    });
+
+    document.querySelector('h3.pt-5').scrollIntoView({
+        behavior: 'smooth'
+    });
 
     console.log(beachesResults, countriesResults, templesResults)
+})
+
+document.querySelector('button[type="reset"]').addEventListener('click', e => {
+    document.querySelectorAll('.beaches, .countries, .temples').forEach(el => {
+        const rowEl = el.querySelector('.row');
+
+        rowEl.innerHTML = '';
+    })
 })
